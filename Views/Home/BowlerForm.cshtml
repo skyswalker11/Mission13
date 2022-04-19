@@ -1,0 +1,59 @@
+﻿@{
+}
+@model Bowler
+
+<form method="post" asp-controller="Home" asp-action="AddBowler" class="mb-5">
+    <input asp-for="BowlerID" value="@Model.BowlerID" type="hidden"/>
+    <div class="form-group">
+        <label asp-for="BowlerFirstName">First Name: </label>
+        <input asp-for="BowlerFirstName" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="BowlerMiddleInit">Middle Init: </label>
+        <input asp-for="BowlerMiddleInit" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="BowlerLastName">Last Name: </label>
+        <input asp-for="BowlerLastName" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="BowlerAddress">Address: </label>
+        <input asp-for="BowlerAddress" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="BowlerCity">City: </label>
+        <input asp-for="BowlerCity" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="BowlerState">State: </label>
+        <input asp-for="BowlerState" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="BowlerZip">Zip: </label>
+        <input asp-for="BowlerZip" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="BowlerPhoneNumber">Phone Number: </label>
+        <input asp-for="BowlerPhoneNumber" class="form-group col-sm" />
+        <br />
+    </div>
+    <div class="form-group">
+        <label asp-for="TeamID">Bowling Team: </label>
+        <select asp-for="TeamID" class="form-group col-sm">
+            @foreach (Team t in ViewBag.Teams)
+            {
+                <option value="@t.TeamID">@t.TeamName</option>
+            }
+
+        </select>
+        <br />
+    </div>
+    <button class="btn btn-outline-primary col-sm">Submit</button>
+</form>
